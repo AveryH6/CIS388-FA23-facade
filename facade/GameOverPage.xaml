@@ -3,10 +3,83 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
              Title="GameOverPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+
+    <ScrollView>
+        <Grid Padding="0" RowSpacing="16" BackgroundColor="#facade">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+
+            </Grid.RowDefinitions>
+
+
+            <!--<RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="48" MaximumHeightRequest="150"/>-->
+            <StackLayout BackgroundColor="#facade" Padding="8" Grid.Row="0">
+                <Label Text="You Won!" FontSize="50" VerticalOptions="Center" HorizontalOptions="Center" Padding="40"/>
+                <Label Text="The Hexcode was..." FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" Padding="16"/>
+                <Label Text="#FACADE"
+                       FontSize="50"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       />
+
+            </StackLayout>
+
+            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12" BackgroundColor="#facade">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Play Again"
+                    WidthRequest="180"
+                    HeightRequest="110"
+                    BackgroundColor="#444"
+                    TextColor="White"
+                    FontSize="26"
+                    
+                />
+
+
+            </Grid>
+
+            <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" BackgroundColor="#facade">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0"
+                    Grid.Column="1"
+                    Text="Main Menu"
+                    WidthRequest="130"
+                    HeightRequest="90"
+                    BackgroundColor="#444"
+                    TextColor="White"
+                    FontSize="18"
+                />
+
+            </Grid>
+        </Grid>
+
+    </ScrollView>
+
 </ContentPage>

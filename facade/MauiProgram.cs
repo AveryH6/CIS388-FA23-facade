@@ -15,6 +15,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
+		builder.Services.AddTransient<GameOverPage>();
+
+		builder.Services.AddTransient<MainPage>();
+
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
