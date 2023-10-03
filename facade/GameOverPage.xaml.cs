@@ -1,34 +1,38 @@
 ﻿namespace facade;
 
-[QueryProperty("Result", "Result")]
+[QueryProperty("DidWin", "DidWin")]
 public partial class GameOverPage : ContentPage
 {
-
-
-
-	//private string result;
-	//public string Result {
-	//	get => result;
-	//	set
-	//	{
-	//		result = value;
-	//		ResultLabel.Text = "You " + result;
-	//	}
-	//}
-
-	public GameOverPage()
-	{
-		InitializeComponent();
-
-		
-
-	}
-
-    async void Play_Again_Button_Clicked(object sender, EventArgs e)
+    private bool didWin;
+    public bool DidWin
     {
-
-        await Shell.Current.GoToAsync(nameof(MainPage));
-
+        get => didWin;
+        set
+        {
+            didWin = value;
+            if (didWin)
+            {
+                ResultLabel.Text = "You Won!";
+            }
+            else
+            {
+                ResultLabel.Text = "You Lost!";
+            }
+        }
     }
 
+    //private string result;
+    //public string Result {
+    //	get => result;
+    //	set
+    //	{
+    //		result = value;
+    //           ResultLabel.Text = "You " + result;
+    //       }
+    //}
+
+    public GameOverPage()
+    {
+        InitializeComponent();
+    }
 }
