@@ -15,7 +15,6 @@ namespace facade
 
         public ObservableCollection<ColorGuess> Guesses { get; set; }
 
-        public bool DidWin { get; set; } = false;
 
         //public string SecretColor { get; set; }
 
@@ -29,11 +28,6 @@ namespace facade
             //Guesses.Add(new ColorGuess("#beaded"));
             //Guesses.Add(new ColorGuess("#efaced"));
 
-        }
-
-        async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
         }
 
 
@@ -54,11 +48,7 @@ namespace facade
         void Guess()
         {
             // if correct, then go to game over (DidWin=true)
-            if (Guesses.Equals(SecretColor))
-            {
-                CurrentGuess = CurrentGuess.Substring(0, CurrentGuess.Length - 1);
-
-            }
+           
             // else if this is the 6th guess (and it's wrong)
             // then go to game over (DidWin=false)
 
